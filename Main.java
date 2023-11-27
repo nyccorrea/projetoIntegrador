@@ -54,11 +54,12 @@ public class Main {
                 String senha_inserida = scanner.nextLine();
 
                 Usuario.validarAcesso(email_inserido, senha_inserida);
-
+                
                 System.out.println("--------------------------------------");
+                System.out.println(Usuario.validarAcesso(email_inserido, senha_inserida));
 
                 // valida acesso como funcionario
-                if (Usuario.validarAcesso(email_inserido, senha_inserida) == "func") {
+                if (Usuario.validarAcesso(email_inserido, senha_inserida) == "Você está logado como funcionário") {
                     //entra no sistema como funcionario, se o acesso for validado
                     while (true) {
                         System.out.println("O que deseja fazer?");
@@ -162,7 +163,7 @@ public class Main {
                                     // se não for opcao válida
                                     default:
                                         System.out.println("\nValor de entrada inválida\n");
-                                        break;
+                                        continue;
                                 }
                             default:
                                 System.out.println("\nValor de entrada inválida\n");
@@ -171,7 +172,7 @@ public class Main {
                     }
                 }
 
-                else if (Usuario.validarAcesso(email_inserido, senha_inserida) == "disc") {
+                else if (Usuario.validarAcesso(email_inserido, senha_inserida) == "Você está logado como discente") {
                     //entra no sistema se o acesso for validado
                     while (true) {
                         System.out.println("O que deseja fazer?");
@@ -216,9 +217,7 @@ public class Main {
                     }
                 }
 
-            }
-
-            else{
+            }else{
                 System.out.println("\nPor favor, insira uma opção existente. \n");
             }
         }

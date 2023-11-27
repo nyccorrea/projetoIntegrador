@@ -99,12 +99,12 @@ public class Usuario {
         for (Usuario usuario : Repositorio.listaUsuarios) {
             if (email.equals(usuario.getEmail()) && senha.equals(usuario.getSenha())) {
                 if(usuario.getTipoUsuario() == 1)
-                    return "func"; // Acesso válido como funcionario
+                    return "Você está logado como funcionário"; // Acesso válido como funcionario
                 else if(usuario.getTipoUsuario() == 0)
-                    return "disc"; // Acesso válido como discente
+                    return "Você está logado como discente"; // Acesso válido como discente
             } 
         }
-        return "invalido"; // Acesso inválido
+        return "Login inválido"; // Acesso inválido
     }
 
 }
