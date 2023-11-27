@@ -62,7 +62,7 @@ public class Main {
                 if (Usuario.validarAcesso(email_inserido, senha_inserida) == "Você está logado como funcionário") {
                     //entra no sistema como funcionario, se o acesso for validado
                     while (true) {
-                        System.out.println("O que deseja fazer?");
+                        System.out.println("\nO que deseja fazer?");
                         System.out.println(" [1] --> Consultar Pedido de Empréstimo \n [2] --> Gerenciar Livros \n [3] --> Logout ");
                         
                         int decisao = scanner.nextInt();
@@ -91,7 +91,7 @@ public class Main {
                                 System.out.println("##################################################");
                                 scanner.nextLine(); // consumir quebra de linha residual
                                 System.out.println("Digite a opção conforme o que desejar: ");
-                                System.out.println(" [1] --> cadastrar livro \n [2] --> consultar livro \n [3] --> Repor exemplar do livro \n [4] --> sair do Gerenciador");
+                                System.out.println("\n [1] --> cadastrar livro \n [2] --> consultar livro \n [3] --> Repor exemplar do livro \n [4] --> sair do Gerenciador");
                                 int opcao = scanner.nextInt();
                                 
                                 switch (opcao) {
@@ -159,6 +159,7 @@ public class Main {
                                         System.out.println("Informe o isbn do livro: ");
                                         String isbn_livro = scanner.nextLine();
                                         Emprestimo.devolver(matricula_disc, codExemplar_emprestado, isbn_livro);
+                                        continue;
         
                                     // se não for opcao válida
                                     default:
